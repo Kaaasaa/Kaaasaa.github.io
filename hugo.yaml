@@ -1,0 +1,25 @@
+baseURL: "https://lvhao.github.io/"
+languageCode: "zh-cn"
+title: "HN"
+theme: "PaperMod"
+
+params:
+  env: production
+
+  homeInfoParams:
+    Title: "HN"
+    Content: "记录思考与表达"
+
+  defaultTheme: auto
+  disableThemeToggle: false
+
+  ShowReadingTime: true
+  ShowPostNavLinks: true
+  ShowCodeCopyButtons: true
+  ShowBreadCrumbs: true
+  ShowShareButtons: false
+  ShowToc: true
+  TocOpen: false
+  ShowWordCount: false
+
+  mainSections: []

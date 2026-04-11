@@ -1,0 +1,55 @@
+/* 整体字体 & 气质 */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+  line-height: 1.8;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+}
+
+/* 内容区（核心阅读体验） */
+.post-content {
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+/* 段落间距（非常关键） */
+.post-content p {
+  margin-bottom: 1.3em;
+}
+
+/* 标题更克制 */
+.post-content h1,
+.post-content h2,
+.post-content h3 {
+  margin-top: 1.8em;
+  margin-bottom: 0.6em;
+}
+
+/* 页面宽度（质感核心） */
+.main {
+  max-width: 720px;
+}
+
+/* 卡片更干净 */
+.post-entry {
+  border-radius: 12px;
+}
+
+/* 鼠标 hover 更克制 */
+.post-entry:hover {
+  transform: none;
+}
+
+h2 {
+  margin-top: 2em;
+  font-weight: 600;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 0.6em;
+}
