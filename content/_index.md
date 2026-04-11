@@ -10,7 +10,7 @@ title: "Home"
 
 
 
-不是记录，而是构建一套可以长期使用的认知结构。
+不是记录，而是构建一套长期有效的认知结构。
 
 
 
@@ -18,23 +18,17 @@ title: "Home"
 
 
 
-\## 思考（Thoughts）
-
-关于社会、个体与信息环境的判断与推演  
-
-→ /thoughts/
+\## 📍 进入内容
 
 
 
-\---
+\### 🧠 思考（Thoughts）
+
+记录对社会、信息与个体的判断
 
 
 
-\## 系统（Systems）
-
-我用来理解世界的方法、模型与框架  
-
-→ /systems/
+👉 \[进入 Thoughts](/thoughts/)
 
 
 
@@ -42,9 +36,41 @@ title: "Home"
 
 
 
-\## 评析（Reviews）
+\### 🧩 系统（Systems）
 
-对书籍、产品与现象的结构化评价  
+方法论与分析框架
 
-→ /reviews/
+
+
+👉 \[进入 Systems](/systems/)
+
+
+
+\---
+
+
+
+\### 📚 评析（Reviews）
+
+对书籍、产品与现象的结构化评价
+
+
+
+👉 \[进入 Reviews](/reviews/)
+
+
+
+\---
+
+
+
+\## 🧭 最新文章
+
+
+
+{{ range first 5 (where site.RegularPages "Type" "posts") }}
+
+\- \[{{ .Title }}]({{ .RelPermalink }})
+
+{{ end }}
 
