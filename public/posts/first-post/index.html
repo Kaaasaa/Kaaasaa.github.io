@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>从 0 到上线：一个小白是如何把博客搭起来的 | HN</title>
+<meta name="keywords" content="">
+<meta name="description" content="从 0 到上线：一个小白是如何把博客搭起来的
+为什么我要一个博客
+在现在这个信息过载的环境里，你几乎无法避免被各种观点包围。
+问题不在于信息多，而在于——
+绝大多数信息是情绪化的、碎片化的、低质量的。
+它们不断出现，不断强化，很容易让人产生一种错觉：
+你在“了解世界”，但实际上，你只是被不断塑造。
+我开始意识到，如果没有一个稳定的输出空间，
+我的想法只会停留在当下，很快被新的信息覆盖。
+所以我想要一个地方：
+
+不是用来表达情绪
+而是用来记录判断
+不是追热点
+而是形成长期思考
+
+博客对我来说，不是工具，而是一种约束：
+逼迫自己把模糊的想法整理成清晰的结构。
+
+为什么不用现成平台
+最直接的原因其实很简单：不喜欢。
+大多数平台都在做同一件事——
+尽可能延长你的停留时间。
+于是就有了：
+
+推荐算法
+广告
+各种功能堆叠
+
+它们的目标不是让你思考，而是让你“停下来”。
+但我想要的是一个完全相反的东西：
+
+没有干扰
+没有推送
+没有任何试图影响我表达的机制
+
+除此之外，还有一个更现实的原因：
+我不信任第三方平台对内容的长期承载能力。
+内容可能被删、被限流、被埋没，
+而你几乎没有任何控制权。
+所以我选择了一条更麻烦的路：
+用 Hugo 搭建一个静态博客，托管在 GitHub 上。
+它很简单，但也很“干净”。
+
+搭建过程：看似简单，实际全是坑
+这套方案在教程里通常被描述为“新手友好”。
+但实际体验是：
+每一步都可能卡住。
+我遇到的几个典型问题，本质上并不是“操作错误”，而是理解缺失。
+
+1. 工具链不熟（Git / SSH）
+最开始连主题都装不上。
+原因不是步骤错了，而是：
+我并不理解 Git 在做什么。
+当你只是“照着命令敲”的时候，一旦出错，你就完全失去判断能力。
+
+2. 网络与环境问题（GitHub 连接）
+在国内环境下，GitHub 的连接并不稳定：
+
+超时
+连接失败
+SSH / HTTPS 混乱
+
+这些问题不会告诉你“该怎么做”，
+只会给你一堆看不懂的报错。">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/first-post/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.9fea91c11217703aee9f6797b9cffdc00d8a524e9bfc17d7d3532ed6edcc6b84.css" integrity="sha256-n&#43;qRwRIXcDrun2eXuc/9wA2KUk6b/BfX01Mu1u3Ma4Q=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/first-post/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="http://localhost:1313/posts/first-post/">
+  <meta property="og:site_name" content="HN">
+  <meta property="og:title" content="从 0 到上线：一个小白是如何把博客搭起来的">
+  <meta property="og:description" content="从 0 到上线：一个小白是如何把博客搭起来的 为什么我要一个博客 在现在这个信息过载的环境里，你几乎无法避免被各种观点包围。
+问题不在于信息多，而在于—— 绝大多数信息是情绪化的、碎片化的、低质量的。
+它们不断出现，不断强化，很容易让人产生一种错觉： 你在“了解世界”，但实际上，你只是被不断塑造。
+我开始意识到，如果没有一个稳定的输出空间， 我的想法只会停留在当下，很快被新的信息覆盖。
+所以我想要一个地方：
+不是用来表达情绪 而是用来记录判断 不是追热点 而是形成长期思考 博客对我来说，不是工具，而是一种约束： 逼迫自己把模糊的想法整理成清晰的结构。
+为什么不用现成平台 最直接的原因其实很简单：不喜欢。
+大多数平台都在做同一件事—— 尽可能延长你的停留时间。
+于是就有了：
+推荐算法 广告 各种功能堆叠 它们的目标不是让你思考，而是让你“停下来”。
+但我想要的是一个完全相反的东西：
+没有干扰 没有推送 没有任何试图影响我表达的机制 除此之外，还有一个更现实的原因：
+我不信任第三方平台对内容的长期承载能力。
+内容可能被删、被限流、被埋没， 而你几乎没有任何控制权。
+所以我选择了一条更麻烦的路：
+用 Hugo 搭建一个静态博客，托管在 GitHub 上。
+它很简单，但也很“干净”。
+搭建过程：看似简单，实际全是坑 这套方案在教程里通常被描述为“新手友好”。
+但实际体验是：
+每一步都可能卡住。
+我遇到的几个典型问题，本质上并不是“操作错误”，而是理解缺失。
+1. 工具链不熟（Git / SSH） 最开始连主题都装不上。
+原因不是步骤错了，而是：
+我并不理解 Git 在做什么。
+当你只是“照着命令敲”的时候，一旦出错，你就完全失去判断能力。
+2. 网络与环境问题（GitHub 连接） 在国内环境下，GitHub 的连接并不稳定：
+超时 连接失败 SSH / HTTPS 混乱 这些问题不会告诉你“该怎么做”， 只会给你一堆看不懂的报错。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-04-11T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-11T00:00:00+00:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="从 0 到上线：一个小白是如何把博客搭起来的">
+  <meta name="twitter:description" content="从 0 到上线：一个小白是如何把博客搭起来的 为什么我要一个博客 在现在这个信息过载的环境里，你几乎无法避免被各种观点包围。
+问题不在于信息多，而在于—— 绝大多数信息是情绪化的、碎片化的、低质量的。
+它们不断出现，不断强化，很容易让人产生一种错觉： 你在“了解世界”，但实际上，你只是被不断塑造。
+我开始意识到，如果没有一个稳定的输出空间， 我的想法只会停留在当下，很快被新的信息覆盖。
+所以我想要一个地方：
+不是用来表达情绪 而是用来记录判断 不是追热点 而是形成长期思考 博客对我来说，不是工具，而是一种约束： 逼迫自己把模糊的想法整理成清晰的结构。
+为什么不用现成平台 最直接的原因其实很简单：不喜欢。
+大多数平台都在做同一件事—— 尽可能延长你的停留时间。
+于是就有了：
+推荐算法 广告 各种功能堆叠 它们的目标不是让你思考，而是让你“停下来”。
+但我想要的是一个完全相反的东西：
+没有干扰 没有推送 没有任何试图影响我表达的机制 除此之外，还有一个更现实的原因：
+我不信任第三方平台对内容的长期承载能力。
+内容可能被删、被限流、被埋没， 而你几乎没有任何控制权。
+所以我选择了一条更麻烦的路：
+用 Hugo 搭建一个静态博客，托管在 GitHub 上。
+它很简单，但也很“干净”。
+搭建过程：看似简单，实际全是坑 这套方案在教程里通常被描述为“新手友好”。
+但实际体验是：
+每一步都可能卡住。
+我遇到的几个典型问题，本质上并不是“操作错误”，而是理解缺失。
+1. 工具链不熟（Git / SSH） 最开始连主题都装不上。
+原因不是步骤错了，而是：
+我并不理解 Git 在做什么。
+当你只是“照着命令敲”的时候，一旦出错，你就完全失去判断能力。
+2. 网络与环境问题（GitHub 连接） 在国内环境下，GitHub 的连接并不稳定：
+超时 连接失败 SSH / HTTPS 混乱 这些问题不会告诉你“该怎么做”， 只会给你一堆看不懂的报错。">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "从 0 到上线：一个小白是如何把博客搭起来的",
+      "item": "http://localhost:1313/posts/first-post/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "从 0 到上线：一个小白是如何把博客搭起来的",
+  "name": "从 0 到上线：一个小白是如何把博客搭起来的",
+  "description": "从 0 到上线：一个小白是如何把博客搭起来的 为什么我要一个博客 在现在这个信息过载的环境里，你几乎无法避免被各种观点包围。\n问题不在于信息多，而在于—— 绝大多数信息是情绪化的、碎片化的、低质量的。\n它们不断出现，不断强化，很容易让人产生一种错觉： 你在“了解世界”，但实际上，你只是被不断塑造。\n我开始意识到，如果没有一个稳定的输出空间， 我的想法只会停留在当下，很快被新的信息覆盖。\n所以我想要一个地方：\n不是用来表达情绪 而是用来记录判断 不是追热点 而是形成长期思考 博客对我来说，不是工具，而是一种约束： 逼迫自己把模糊的想法整理成清晰的结构。\n为什么不用现成平台 最直接的原因其实很简单：不喜欢。\n大多数平台都在做同一件事—— 尽可能延长你的停留时间。\n于是就有了：\n推荐算法 广告 各种功能堆叠 它们的目标不是让你思考，而是让你“停下来”。\n但我想要的是一个完全相反的东西：\n没有干扰 没有推送 没有任何试图影响我表达的机制 除此之外，还有一个更现实的原因：\n我不信任第三方平台对内容的长期承载能力。\n内容可能被删、被限流、被埋没， 而你几乎没有任何控制权。\n所以我选择了一条更麻烦的路：\n用 Hugo 搭建一个静态博客，托管在 GitHub 上。\n它很简单，但也很“干净”。\n搭建过程：看似简单，实际全是坑 这套方案在教程里通常被描述为“新手友好”。\n但实际体验是：\n每一步都可能卡住。\n我遇到的几个典型问题，本质上并不是“操作错误”，而是理解缺失。\n1. 工具链不熟（Git / SSH） 最开始连主题都装不上。\n原因不是步骤错了，而是：\n我并不理解 Git 在做什么。\n当你只是“照着命令敲”的时候，一旦出错，你就完全失去判断能力。\n2. 网络与环境问题（GitHub 连接） 在国内环境下，GitHub 的连接并不稳定：\n超时 连接失败 SSH / HTTPS 混乱 这些问题不会告诉你“该怎么做”， 只会给你一堆看不懂的报错。\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "从 0 到上线：一个小白是如何把博客搭起来的 为什么我要一个博客 在现在这个信息过载的环境里，你几乎无法避免被各种观点包围。\n问题不在于信息多，而在于—— 绝大多数信息是情绪化的、碎片化的、低质量的。\n它们不断出现，不断强化，很容易让人产生一种错觉： 你在“了解世界”，但实际上，你只是被不断塑造。\n我开始意识到，如果没有一个稳定的输出空间， 我的想法只会停留在当下，很快被新的信息覆盖。\n所以我想要一个地方：\n不是用来表达情绪 而是用来记录判断 不是追热点 而是形成长期思考 博客对我来说，不是工具，而是一种约束： 逼迫自己把模糊的想法整理成清晰的结构。\n为什么不用现成平台 最直接的原因其实很简单：不喜欢。\n大多数平台都在做同一件事—— 尽可能延长你的停留时间。\n于是就有了：\n推荐算法 广告 各种功能堆叠 它们的目标不是让你思考，而是让你“停下来”。\n但我想要的是一个完全相反的东西：\n没有干扰 没有推送 没有任何试图影响我表达的机制 除此之外，还有一个更现实的原因：\n我不信任第三方平台对内容的长期承载能力。\n内容可能被删、被限流、被埋没， 而你几乎没有任何控制权。\n所以我选择了一条更麻烦的路：\n用 Hugo 搭建一个静态博客，托管在 GitHub 上。\n它很简单，但也很“干净”。\n搭建过程：看似简单，实际全是坑 这套方案在教程里通常被描述为“新手友好”。\n但实际体验是：\n每一步都可能卡住。\n我遇到的几个典型问题，本质上并不是“操作错误”，而是理解缺失。\n1. 工具链不熟（Git / SSH） 最开始连主题都装不上。\n原因不是步骤错了，而是：\n我并不理解 Git 在做什么。\n当你只是“照着命令敲”的时候，一旦出错，你就完全失去判断能力。\n2. 网络与环境问题（GitHub 连接） 在国内环境下，GitHub 的连接并不稳定：\n超时 连接失败 SSH / HTTPS 混乱 这些问题不会告诉你“该怎么做”， 只会给你一堆看不懂的报错。\n3. 子模块与部署机制（最坑的一点） 最难的不是写代码，而是理解：\n为什么本地可以，线上却不行？\n比如：\n主题没有正确拉取 Actions 构建成功，但页面是 404 实际上部署的是“空站” 这些问题的共同点是：\n👉 你以为你做对了，但系统并没有按你理解的方式运行\n我是怎么解决这些问题的 一开始的状态是：乱试。\n不停地改配置、重跑、刷新。\n但很快发现，这样是无效的。\n后来我逐渐改变了方式：\n1. 把报错当作信息，而不是障碍 报错不是“失败”，而是：\n👉 系统在告诉你它哪里没按预期工作\n当你开始认真读报错，而不是忽略它， 问题就开始变得“可定位”。\n2. 从“跟教程”转向“理解结构” 教程告诉你“怎么做”， 但不会告诉你“为什么”。\n只有当你理解了：\nHugo 是如何生成页面的 GitHub Actions 在做什么 submodule 是什么 你才真正具备解决问题的能力。\n3. 接受“慢”的过程 这件事没有捷径。\n你不可能在完全不理解的情况下，一次成功。\n但每解决一个问题，你对系统的理解就多一层。\n最后的结果 博客上线了。\n但这件事本身，其实没有那么重要。\n更重要的是：\n我第一次完整地经历了一个过程：\n从完全不懂 到不断出错 再到逐渐理解 最终解决问题 一点总结 这次经历给我最直接的几个感受是：\n报错不是问题，忽略报错才是问题 技术问题的本质，往往是理解问题 搭建博客这件事，本质上是在训练解决问题的能力 博客只是一个开始。\n真正有价值的，是你在这个过程中建立起来的东西。\n",
+  "wordCount" : "129",
+  "inLanguage": "en",
+  "datePublished": "2026-04-11T00:00:00Z",
+  "dateModified": "2026-04-11T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/first-post/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "HN",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="HN (Alt + H)">HN</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      从 0 到上线：一个小白是如何把博客搭起来的
+    </h1>
+    <div class="post-meta"><span title='2026-04-11 00:00:00 +0000 UTC'>April 11, 2026</span>&nbsp;·&nbsp;<span>1 min</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e4%bb%8e-0-%e5%88%b0%e4%b8%8a%e7%ba%bf%e4%b8%80%e4%b8%aa%e5%b0%8f%e7%99%bd%e6%98%af%e5%a6%82%e4%bd%95%e6%8a%8a%e5%8d%9a%e5%ae%a2%e6%90%ad%e8%b5%b7%e6%9d%a5%e7%9a%84" aria-label="从 0 到上线：一个小白是如何把博客搭起来的">从 0 到上线：一个小白是如何把博客搭起来的</a><ul>
+                        
+                <li>
+                    <a href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e6%88%91%e8%a6%81%e4%b8%80%e4%b8%aa%e5%8d%9a%e5%ae%a2" aria-label="为什么我要一个博客">为什么我要一个博客</a></li>
+                <li>
+                    <a href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e4%b8%8d%e7%94%a8%e7%8e%b0%e6%88%90%e5%b9%b3%e5%8f%b0" aria-label="为什么不用现成平台">为什么不用现成平台</a></li>
+                <li>
+                    <a href="#%e6%90%ad%e5%bb%ba%e8%bf%87%e7%a8%8b%e7%9c%8b%e4%bc%bc%e7%ae%80%e5%8d%95%e5%ae%9e%e9%99%85%e5%85%a8%e6%98%af%e5%9d%91" aria-label="搭建过程：看似简单，实际全是坑">搭建过程：看似简单，实际全是坑</a><ul>
+                        
+                <li>
+                    <a href="#1-%e5%b7%a5%e5%85%b7%e9%93%be%e4%b8%8d%e7%86%9fgit--ssh" aria-label="1. 工具链不熟（Git / SSH）">1. 工具链不熟（Git / SSH）</a></li>
+                <li>
+                    <a href="#2-%e7%bd%91%e7%bb%9c%e4%b8%8e%e7%8e%af%e5%a2%83%e9%97%ae%e9%a2%98github-%e8%bf%9e%e6%8e%a5" aria-label="2. 网络与环境问题（GitHub 连接）">2. 网络与环境问题（GitHub 连接）</a></li>
+                <li>
+                    <a href="#3-%e5%ad%90%e6%a8%a1%e5%9d%97%e4%b8%8e%e9%83%a8%e7%bd%b2%e6%9c%ba%e5%88%b6%e6%9c%80%e5%9d%91%e7%9a%84%e4%b8%80%e7%82%b9" aria-label="3. 子模块与部署机制（最坑的一点）">3. 子模块与部署机制（最坑的一点）</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e6%88%91%e6%98%af%e6%80%8e%e4%b9%88%e8%a7%a3%e5%86%b3%e8%bf%99%e4%ba%9b%e9%97%ae%e9%a2%98%e7%9a%84" aria-label="我是怎么解决这些问题的">我是怎么解决这些问题的</a><ul>
+                        
+                <li>
+                    <a href="#1-%e6%8a%8a%e6%8a%a5%e9%94%99%e5%bd%93%e4%bd%9c%e4%bf%a1%e6%81%af%e8%80%8c%e4%b8%8d%e6%98%af%e9%9a%9c%e7%a2%8d" aria-label="1. 把报错当作信息，而不是障碍">1. 把报错当作信息，而不是障碍</a></li>
+                <li>
+                    <a href="#2-%e4%bb%8e%e8%b7%9f%e6%95%99%e7%a8%8b%e8%bd%ac%e5%90%91%e7%90%86%e8%a7%a3%e7%bb%93%e6%9e%84" aria-label="2. 从“跟教程”转向“理解结构”">2. 从“跟教程”转向“理解结构”</a></li>
+                <li>
+                    <a href="#3-%e6%8e%a5%e5%8f%97%e6%85%a2%e7%9a%84%e8%bf%87%e7%a8%8b" aria-label="3. 接受“慢”的过程">3. 接受“慢”的过程</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e6%9c%80%e5%90%8e%e7%9a%84%e7%bb%93%e6%9e%9c" aria-label="最后的结果">最后的结果</a></li>
+                <li>
+                    <a href="#%e4%b8%80%e7%82%b9%e6%80%bb%e7%bb%93" aria-label="一点总结">一点总结</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content md-content"><h2 id="从-0-到上线一个小白是如何把博客搭起来的">从 0 到上线：一个小白是如何把博客搭起来的<a hidden class="anchor" aria-hidden="true" href="#从-0-到上线一个小白是如何把博客搭起来的">#</a></h2>
+<h3 id="为什么我要一个博客">为什么我要一个博客<a hidden class="anchor" aria-hidden="true" href="#为什么我要一个博客">#</a></h3>
+<p>在现在这个信息过载的环境里，你几乎无法避免被各种观点包围。</p>
+<p>问题不在于信息多，而在于——
+绝大多数信息是情绪化的、碎片化的、低质量的。</p>
+<p>它们不断出现，不断强化，很容易让人产生一种错觉：
+你在“了解世界”，但实际上，你只是被不断塑造。</p>
+<p>我开始意识到，如果没有一个稳定的输出空间，
+我的想法只会停留在当下，很快被新的信息覆盖。</p>
+<p>所以我想要一个地方：</p>
+<ul>
+<li>不是用来表达情绪</li>
+<li>而是用来记录判断</li>
+<li>不是追热点</li>
+<li>而是形成长期思考</li>
+</ul>
+<p>博客对我来说，不是工具，而是一种约束：
+逼迫自己把模糊的想法整理成清晰的结构。</p>
+<hr>
+<h3 id="为什么不用现成平台">为什么不用现成平台<a hidden class="anchor" aria-hidden="true" href="#为什么不用现成平台">#</a></h3>
+<p>最直接的原因其实很简单：不喜欢。</p>
+<p>大多数平台都在做同一件事——
+尽可能延长你的停留时间。</p>
+<p>于是就有了：</p>
+<ul>
+<li>推荐算法</li>
+<li>广告</li>
+<li>各种功能堆叠</li>
+</ul>
+<p>它们的目标不是让你思考，而是让你“停下来”。</p>
+<p>但我想要的是一个完全相反的东西：</p>
+<ul>
+<li>没有干扰</li>
+<li>没有推送</li>
+<li>没有任何试图影响我表达的机制</li>
+</ul>
+<p>除此之外，还有一个更现实的原因：</p>
+<p>我不信任第三方平台对内容的长期承载能力。</p>
+<p>内容可能被删、被限流、被埋没，
+而你几乎没有任何控制权。</p>
+<p>所以我选择了一条更麻烦的路：</p>
+<p>用 Hugo 搭建一个静态博客，托管在 GitHub 上。</p>
+<p>它很简单，但也很“干净”。</p>
+<hr>
+<h3 id="搭建过程看似简单实际全是坑">搭建过程：看似简单，实际全是坑<a hidden class="anchor" aria-hidden="true" href="#搭建过程看似简单实际全是坑">#</a></h3>
+<p>这套方案在教程里通常被描述为“新手友好”。</p>
+<p>但实际体验是：</p>
+<p>每一步都可能卡住。</p>
+<p>我遇到的几个典型问题，本质上并不是“操作错误”，而是<strong>理解缺失</strong>。</p>
+<hr>
+<h4 id="1-工具链不熟git--ssh">1. 工具链不熟（Git / SSH）<a hidden class="anchor" aria-hidden="true" href="#1-工具链不熟git--ssh">#</a></h4>
+<p>最开始连主题都装不上。</p>
+<p>原因不是步骤错了，而是：</p>
+<p>我并不理解 Git 在做什么。</p>
+<p>当你只是“照着命令敲”的时候，一旦出错，你就完全失去判断能力。</p>
+<hr>
+<h4 id="2-网络与环境问题github-连接">2. 网络与环境问题（GitHub 连接）<a hidden class="anchor" aria-hidden="true" href="#2-网络与环境问题github-连接">#</a></h4>
+<p>在国内环境下，GitHub 的连接并不稳定：</p>
+<ul>
+<li>超时</li>
+<li>连接失败</li>
+<li>SSH / HTTPS 混乱</li>
+</ul>
+<p>这些问题不会告诉你“该怎么做”，
+只会给你一堆看不懂的报错。</p>
+<hr>
+<h4 id="3-子模块与部署机制最坑的一点">3. 子模块与部署机制（最坑的一点）<a hidden class="anchor" aria-hidden="true" href="#3-子模块与部署机制最坑的一点">#</a></h4>
+<p>最难的不是写代码，而是理解：</p>
+<blockquote>
+<p>为什么本地可以，线上却不行？</p>
+</blockquote>
+<p>比如：</p>
+<ul>
+<li>主题没有正确拉取</li>
+<li>Actions 构建成功，但页面是 404</li>
+<li>实际上部署的是“空站”</li>
+</ul>
+<p>这些问题的共同点是：</p>
+<p>👉 <strong>你以为你做对了，但系统并没有按你理解的方式运行</strong></p>
+<hr>
+<h3 id="我是怎么解决这些问题的">我是怎么解决这些问题的<a hidden class="anchor" aria-hidden="true" href="#我是怎么解决这些问题的">#</a></h3>
+<p>一开始的状态是：乱试。</p>
+<p>不停地改配置、重跑、刷新。</p>
+<p>但很快发现，这样是无效的。</p>
+<p>后来我逐渐改变了方式：</p>
+<hr>
+<h4 id="1-把报错当作信息而不是障碍">1. 把报错当作信息，而不是障碍<a hidden class="anchor" aria-hidden="true" href="#1-把报错当作信息而不是障碍">#</a></h4>
+<p>报错不是“失败”，而是：</p>
+<p>👉 系统在告诉你它哪里没按预期工作</p>
+<p>当你开始认真读报错，而不是忽略它，
+问题就开始变得“可定位”。</p>
+<hr>
+<h4 id="2-从跟教程转向理解结构">2. 从“跟教程”转向“理解结构”<a hidden class="anchor" aria-hidden="true" href="#2-从跟教程转向理解结构">#</a></h4>
+<p>教程告诉你“怎么做”，
+但不会告诉你“为什么”。</p>
+<p>只有当你理解了：</p>
+<ul>
+<li>Hugo 是如何生成页面的</li>
+<li>GitHub Actions 在做什么</li>
+<li>submodule 是什么</li>
+</ul>
+<p>你才真正具备解决问题的能力。</p>
+<hr>
+<h4 id="3-接受慢的过程">3. 接受“慢”的过程<a hidden class="anchor" aria-hidden="true" href="#3-接受慢的过程">#</a></h4>
+<p>这件事没有捷径。</p>
+<p>你不可能在完全不理解的情况下，一次成功。</p>
+<p>但每解决一个问题，你对系统的理解就多一层。</p>
+<hr>
+<h3 id="最后的结果">最后的结果<a hidden class="anchor" aria-hidden="true" href="#最后的结果">#</a></h3>
+<p>博客上线了。</p>
+<p>但这件事本身，其实没有那么重要。</p>
+<p>更重要的是：</p>
+<p>我第一次完整地经历了一个过程：</p>
+<ul>
+<li>从完全不懂</li>
+<li>到不断出错</li>
+<li>再到逐渐理解</li>
+<li>最终解决问题</li>
+</ul>
+<hr>
+<h3 id="一点总结">一点总结<a hidden class="anchor" aria-hidden="true" href="#一点总结">#</a></h3>
+<p>这次经历给我最直接的几个感受是：</p>
+<ol>
+<li>报错不是问题，忽略报错才是问题</li>
+<li>技术问题的本质，往往是理解问题</li>
+<li>搭建博客这件事，本质上是在训练解决问题的能力</li>
+</ol>
+<hr>
+<p>博客只是一个开始。</p>
+<p>真正有价值的，是你在这个过程中建立起来的东西。</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">HN</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
