@@ -68,46 +68,30 @@
 
 </script><meta property="og:url" content="http://localhost:1313/">
   <meta property="og:site_name" content="HN">
-  <meta property="og:title" content="HN">
-  <meta property="og:description" content="-–
-title: “Home”
--–
-## 我在试图理解这个世界
-不是记录，而是构建一套可以长期使用的认知结构。
--–
-## 思考（Thoughts）
-关于社会、个体与信息环境的判断与推演
-→ /thoughts/
--–
-## 系统（Systems）
-我用来理解世界的方法、模型与框架
-→ /systems/
--–
-## 评析（Reviews）
-对书籍、产品与现象的结构化评价
-→ /reviews/">
+  <meta property="og:title" content="Home">
+  <meta property="og:description" content="我在试图理解这个世界 不是记录，而是构建一套长期有效的认知结构。
+📍 进入内容 🧠 思考（Thoughts） 记录对社会、信息与个体的判断
+👉 进入 Thoughts
+🧩 系统（Systems） 方法论与分析框架
+👉 进入 Systems
+📚 评析（Reviews） 对书籍、产品与现象的结构化评价
+👉 进入 Reviews
+🧭 最新文章 {{ range first 5 (where site.RegularPages “Type” “posts”) }}
+[{{ .Title }}]({{ .RelPermalink }}) {{ end }}">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="website">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="HN">
-  <meta name="twitter:description" content="-–
-title: “Home”
--–
-## 我在试图理解这个世界
-不是记录，而是构建一套可以长期使用的认知结构。
--–
-## 思考（Thoughts）
-关于社会、个体与信息环境的判断与推演
-→ /thoughts/
--–
-## 系统（Systems）
-我用来理解世界的方法、模型与框架
-→ /systems/
--–
-## 评析（Reviews）
-对书籍、产品与现象的结构化评价
-→ /reviews/">
+  <meta name="twitter:title" content="Home">
+  <meta name="twitter:description" content="我在试图理解这个世界 不是记录，而是构建一套长期有效的认知结构。
+📍 进入内容 🧠 思考（Thoughts） 记录对社会、信息与个体的判断
+👉 进入 Thoughts
+🧩 系统（Systems） 方法论与分析框架
+👉 进入 Systems
+📚 评析（Reviews） 对书籍、产品与现象的结构化评价
+👉 进入 Reviews
+🧭 最新文章 {{ range first 5 (where site.RegularPages “Type” “posts”) }}
+[{{ .Title }}]({{ .RelPermalink }}) {{ end }}">
 
 <script type="application/ld+json">
 {
@@ -156,23 +140,28 @@ title: “Home”
     </nav>
 </header>
 <main class="main"> 
-<div class="md-content"><p>-&ndash;</p>
-<p>title: &ldquo;Home&rdquo;</p>
-<p>-&ndash;</p>
-<p>## 我在试图理解这个世界</p>
-<p>不是记录，而是构建一套可以长期使用的认知结构。</p>
-<p>-&ndash;</p>
-<p>## 思考（Thoughts）</p>
-<p>关于社会、个体与信息环境的判断与推演</p>
-<p>→ /thoughts/</p>
-<p>-&ndash;</p>
-<p>## 系统（Systems）</p>
-<p>我用来理解世界的方法、模型与框架</p>
-<p>→ /systems/</p>
-<p>-&ndash;</p>
-<p>## 评析（Reviews）</p>
+<div class="md-content"><h2 id="我在试图理解这个世界">我在试图理解这个世界<a hidden class="anchor" aria-hidden="true" href="#我在试图理解这个世界">#</a></h2>
+<p>不是记录，而是构建一套长期有效的认知结构。</p>
+<hr>
+<h2 id="-进入内容">📍 进入内容<a hidden class="anchor" aria-hidden="true" href="#-进入内容">#</a></h2>
+<h3 id="-思考thoughts">🧠 思考（Thoughts）<a hidden class="anchor" aria-hidden="true" href="#-思考thoughts">#</a></h3>
+<p>记录对社会、信息与个体的判断</p>
+<p>👉 <a href="/thoughts/">进入 Thoughts</a></p>
+<hr>
+<h3 id="-系统systems">🧩 系统（Systems）<a hidden class="anchor" aria-hidden="true" href="#-系统systems">#</a></h3>
+<p>方法论与分析框架</p>
+<p>👉 <a href="/systems/">进入 Systems</a></p>
+<hr>
+<h3 id="-评析reviews">📚 评析（Reviews）<a hidden class="anchor" aria-hidden="true" href="#-评析reviews">#</a></h3>
 <p>对书籍、产品与现象的结构化评价</p>
-<p>→ /reviews/</p>
+<p>👉 <a href="/reviews/">进入 Reviews</a></p>
+<hr>
+<h2 id="-最新文章">🧭 最新文章<a hidden class="anchor" aria-hidden="true" href="#-最新文章">#</a></h2>
+<p>{{ range first 5 (where site.RegularPages &ldquo;Type&rdquo; &ldquo;posts&rdquo;) }}</p>
+<ul>
+<li>[{{ .Title }}]({{ .RelPermalink }})</li>
+</ul>
+<p>{{ end }}</p>
 
 
 </div>

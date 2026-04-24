@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Home on HN</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content in Home on HN</description>
+    <title>思考 on HN</title>
+    <link>http://localhost:1313/tags/%E6%80%9D%E8%80%83/</link>
+    <description>Recent content in 思考 on HN</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 24 Apr 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E6%80%9D%E8%80%83/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>为什么越努力的人，越容易陷入成长焦虑</title>
       <link>http://localhost:1313/posts/self-groth/</link>
@@ -132,96 +132,6 @@
 &lt;p&gt;但当一个人拥有自律的身体、稳定的气质、清醒的头脑，以及坦然面对自己的能力时，我认为他已经是成功的人。&lt;/p&gt;
 &lt;p&gt;我未必会成为世俗意义上的成功者。&lt;/p&gt;
 &lt;p&gt;但我希望成为一个清醒、自律、体面，并能坦然面对自己的人。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>First</title>
-      <link>http://localhost:1313/posts/first/</link>
-      <pubDate>Sat, 11 Apr 2026 19:33:03 +0800</pubDate>
-      <guid>http://localhost:1313/posts/first/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>从 0 到上线：一个小白是如何把博客搭起来的</title>
-      <link>http://localhost:1313/posts/first-post/</link>
-      <pubDate>Sat, 11 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/first-post/</guid>
-      <description>&lt;h2 id=&#34;从-0-到上线一个小白是如何把博客搭起来的&#34;&gt;从 0 到上线：一个小白是如何把博客搭起来的&lt;/h2&gt;
-&lt;h3 id=&#34;为什么我要一个博客&#34;&gt;为什么我要一个博客&lt;/h3&gt;
-&lt;p&gt;在现在这个信息过载的环境里，你几乎无法避免被各种观点包围。&lt;/p&gt;
-&lt;p&gt;问题不在于信息多，而在于——
-绝大多数信息是情绪化的、碎片化的、低质量的。&lt;/p&gt;
-&lt;p&gt;它们不断出现，不断强化，很容易让人产生一种错觉：
-你在“了解世界”，但实际上，你只是被不断塑造。&lt;/p&gt;
-&lt;p&gt;我开始意识到，如果没有一个稳定的输出空间，
-我的想法只会停留在当下，很快被新的信息覆盖。&lt;/p&gt;
-&lt;p&gt;所以我想要一个地方：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;不是用来表达情绪&lt;/li&gt;
-&lt;li&gt;而是用来记录判断&lt;/li&gt;
-&lt;li&gt;不是追热点&lt;/li&gt;
-&lt;li&gt;而是形成长期思考&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;博客对我来说，不是工具，而是一种约束：
-逼迫自己把模糊的想法整理成清晰的结构。&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;为什么不用现成平台&#34;&gt;为什么不用现成平台&lt;/h3&gt;
-&lt;p&gt;最直接的原因其实很简单：不喜欢。&lt;/p&gt;
-&lt;p&gt;大多数平台都在做同一件事——
-尽可能延长你的停留时间。&lt;/p&gt;
-&lt;p&gt;于是就有了：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;推荐算法&lt;/li&gt;
-&lt;li&gt;广告&lt;/li&gt;
-&lt;li&gt;各种功能堆叠&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;它们的目标不是让你思考，而是让你“停下来”。&lt;/p&gt;
-&lt;p&gt;但我想要的是一个完全相反的东西：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;没有干扰&lt;/li&gt;
-&lt;li&gt;没有推送&lt;/li&gt;
-&lt;li&gt;没有任何试图影响我表达的机制&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;除此之外，还有一个更现实的原因：&lt;/p&gt;
-&lt;p&gt;我不信任第三方平台对内容的长期承载能力。&lt;/p&gt;
-&lt;p&gt;内容可能被删、被限流、被埋没，
-而你几乎没有任何控制权。&lt;/p&gt;
-&lt;p&gt;所以我选择了一条更麻烦的路：&lt;/p&gt;
-&lt;p&gt;用 Hugo 搭建一个静态博客，托管在 GitHub 上。&lt;/p&gt;
-&lt;p&gt;它很简单，但也很“干净”。&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;搭建过程看似简单实际全是坑&#34;&gt;搭建过程：看似简单，实际全是坑&lt;/h3&gt;
-&lt;p&gt;这套方案在教程里通常被描述为“新手友好”。&lt;/p&gt;
-&lt;p&gt;但实际体验是：&lt;/p&gt;
-&lt;p&gt;每一步都可能卡住。&lt;/p&gt;
-&lt;p&gt;我遇到的几个典型问题，本质上并不是“操作错误”，而是&lt;strong&gt;理解缺失&lt;/strong&gt;。&lt;/p&gt;
-&lt;hr&gt;
-&lt;h4 id=&#34;1-工具链不熟git--ssh&#34;&gt;1. 工具链不熟（Git / SSH）&lt;/h4&gt;
-&lt;p&gt;最开始连主题都装不上。&lt;/p&gt;
-&lt;p&gt;原因不是步骤错了，而是：&lt;/p&gt;
-&lt;p&gt;我并不理解 Git 在做什么。&lt;/p&gt;
-&lt;p&gt;当你只是“照着命令敲”的时候，一旦出错，你就完全失去判断能力。&lt;/p&gt;
-&lt;hr&gt;
-&lt;h4 id=&#34;2-网络与环境问题github-连接&#34;&gt;2. 网络与环境问题（GitHub 连接）&lt;/h4&gt;
-&lt;p&gt;在国内环境下，GitHub 的连接并不稳定：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;超时&lt;/li&gt;
-&lt;li&gt;连接失败&lt;/li&gt;
-&lt;li&gt;SSH / HTTPS 混乱&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;这些问题不会告诉你“该怎么做”，
-只会给你一堆看不懂的报错。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/posts/test/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/test/</guid>
-      <description>&lt;p&gt;-&amp;ndash;&lt;/p&gt;
-&lt;p&gt;title: &amp;ldquo;Test&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;date: 2026-04-11&lt;/p&gt;
-&lt;p&gt;draft: false   # ❗ 必须是 false&lt;/p&gt;
-&lt;p&gt;-&amp;ndash;&lt;/p&gt;
-&lt;p&gt;Hello World&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
