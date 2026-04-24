@@ -10,4 +10,4 @@ title: "Home"
 
 ## Article
 
-[My opinion](/post/)
+[My opinion](/posts/)
