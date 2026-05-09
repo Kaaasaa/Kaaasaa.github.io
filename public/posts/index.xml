@@ -6,7 +6,7 @@
     <description>Recent content in Posts on HN</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 24 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 09 May 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>为什么越努力的人，越容易陷入成长焦虑</title>
@@ -102,6 +102,13 @@
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;有些阶段是在积累，不是在展示成果。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>允许自己笨拙地开始</title>
+      <link>http://localhost:1313/posts/starting/</link>
+      <pubDate>Sat, 09 May 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/starting/</guid>
+      <description>很多时候，我们不是做不到，而是接受不了自己一开始做得不够好。</description>
     </item>
     <item>
       <title>我所理解的成功</title>
